@@ -35,7 +35,7 @@ except Exception as e:
     st.stop()
 
 # Display the image
-st.image(image_url, caption='Super Email Spam Detector App', use_column_width=True)
+st.image(image_url, caption='Super Email Spam Detector App', width=500)
 
 # Streamlit app layout
 st.title("Welcome to Super Email Spam Detector App (MIS542)")
