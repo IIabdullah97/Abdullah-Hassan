@@ -19,14 +19,14 @@ def download_file(url, filename):
     return filename
 
 # URLs of the files in the GitHub repository
-pipeline_url = "https://raw.githubusercontent.com/BaderIAlharbi/Team4/main/Team4vectorizer_pipeline.pkl"
-model_url = "https://raw.githubusercontent.com/BaderIAlharbi/Team4/main/Team4model_nb.pkl"
-image_url = "https://miro.medium.com/v2/resize:fit:1400/0*mbFBPcPUJD-53v3h.png" 
-
+pipeline_url = "https://raw.githubusercontent.com/IIabdullah97/Abdullah-Hassan/main/Vectorizer.pkl"
+model_url = "https://raw.githubusercontent.com/IIabdullah97/Abdullah-Hassan/main/Model.pkl"
+image_url = "https://miro.medium.com/v2/resize:fit:693/0*u_3GNniqZ6e7DSFK.png" 
+image_url2 = "https://miro.medium.com/v2/resize:fit:1400/1*_igArwmR7Pj_Mu_KUGD1SQ.png"
 try:
     # Download and load the pipeline and model
-    pipeline_path = download_file(pipeline_url, "Team4vectorizer_pipeline.pkl")
-    model_path = download_file(model_url, "Team4model_nb.pkl")
+    pipeline_path = download_file(pipeline_url, "Vectorizer.pkl")
+    model_path = download_file(model_url, "Model.pkl")
 
     vectorizer = joblib.load(pipeline_path)
     model = joblib.load(model_path)
@@ -35,15 +35,14 @@ except Exception as e:
     st.stop()
 
 # Display the image
-st.image(image_url, caption='Team 4 Project', use_column_width=True)
+st.image(image_url, caption='Super Email Spam Detector App', use_column_width=True)
 
 # Streamlit app layout
-st.title("Team 4 Project")
-st.markdown("### Email Spam Detection App")
+st.title("Welcome to Super Email Spam Detector App (MIS542)")
 
-input_text = st.text_area("Enter your email text and we will check it for you for free!:", "")
+input_text = st.text_area("Let's Validate Your Email:", "")
 
-if st.button("Predict"):
+if st.button("Let's Check!"):
     if input_text:
         try:
             processed_text = vectorizer.transform([input_text])
@@ -51,6 +50,9 @@ if st.button("Predict"):
             #result = "Spam" if prediction[0] == 1 else "Not Spam"
             st.write(f"Prediction: {prediction}")
         except Exception as e:
-            st.error(f"Error during prediction: {e}")
+            st.error(f"Error during Classification: {e}")
     else:
-        st.write("Please enter a message to predict.")
+        st.write("Please enter a message to check.")
+
+# Display the image
+st.image(image_url2, caption='Super Email Spam Detector App', use_column_width=True)
