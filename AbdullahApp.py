@@ -47,7 +47,7 @@ if st.button("Let's Check!"):
         try:
             processed_text = vectorizer.transform([input_text])
             prediction = model.predict(processed_text)
-            #result = "Spam" if prediction[0] == 1 else "Not Spam"
+            #result = prediction[0]
             st.write(f"Prediction: {prediction}")
         except Exception as e:
             st.error(f"Error during Classification: {e}")
