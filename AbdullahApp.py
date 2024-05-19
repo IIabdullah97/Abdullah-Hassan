@@ -19,7 +19,7 @@ def download_file(url, filename):
     return filename
 
 # URLs of the files in the GitHub repository
-pipeline_url = "https://raw.githubusercontent.com/IIabdullah97/Abdullah-Hassan/main/Vectorizer.pkl"
+pipeline_url = "https://raw.githubusercontent.com/IIabdullah97/Abdullah-Hassan/main/GSUPERAPP_Vect.pkl"
 model_url = "https://raw.githubusercontent.com/IIabdullah97/Abdullah-Hassan/main/GSUPERAPPModel.pkl"
 image_url = "https://miro.medium.com/v2/resize:fit:693/0*u_3GNniqZ6e7DSFK.png" 
 image_url2 = "https://miro.medium.com/v2/resize:fit:1400/1*_igArwmR7Pj_Mu_KUGD1SQ.png"
